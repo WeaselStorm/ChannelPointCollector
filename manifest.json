@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Twitch Chest Clicker",
+    "version": "0.1",
+    "description": "Clicks the Stream chest",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.twitch.tv/*"
+            ],
+            "js": ["js/interaction.js"]
+        }
+    ]
+}
