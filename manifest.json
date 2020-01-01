@@ -1,8 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Twitch Chest Clicker",
-    "version": "0.1",
-    "description": "Clicks the Stream chest",
+    "name": "Channel Point Collector",
+    "version": "0.1.1",
+    "description": "Collects bonus channel points every time they appear while watching a stream on Twitch.",
+    "icons":{"128": "icon128.png"},
     "content_scripts": [
         {
             "matches": [
