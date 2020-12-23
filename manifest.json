@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Channel Point Collector",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Collects bonus channel points every time they appear while watching a stream on Twitch.",
     "icons":{"128": "icon128.png"},
     "content_scripts": [
