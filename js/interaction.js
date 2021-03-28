@@ -10,7 +10,7 @@ const CLAIM_CHAT_CONTAINER_QUERY = 'div[data-test-selector="chat-private-callout
 
 const CLAIM_BUTTON_TEXT = "Claim";
 
-const CHAT_TRAY_CLASSES = "div.chat-input-tray__open";
+const CHAT_TRAY_QUERY = 'div[data-test-selector="chat-input-tray"]';
 
 const CLOSE_BUTTON_QUERY = 'button[aria-label="Close"]'
 
@@ -37,7 +37,7 @@ async function whatever() {
         } catch (e) { }
 
         try {
-            let chatTray = document.getElementsByClassName(CHAT_TRAY_CLASSES);
+            let chatTray = document.querySelectorAll(CHAT_TRAY_QUERY);
             if (chatTray.length && chatTray[0].innerText.includes('Claimed!') && chatTray[0].querySelectorAll(CLOSE_BUTTON_QUERY).length) {
                 chatTray[0].querySelector(CLOSE_BUTTON_QUERY).click();
             }
