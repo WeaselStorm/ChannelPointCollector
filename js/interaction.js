@@ -13,15 +13,23 @@ async function whatever() {
         await sleep(2000);
         let channelPointArea = document.getElementsByClassName(CHANNEL_POINT_AREA_CLASS);
         if (channelPointArea[0].getElementsByTagName('button').length > 1) {
-            channelPointArea[0].getElementsByTagName('button')[1].click();
+            try {
+                channelPointArea[0].getElementsByTagName('button')[1].click();
+            } catch (e) {
+                console.log('Error in channelPoint collection: ' + e.message)
+            }
         }
         
         let claimButtonContainers = document.querySelectorAll(CLAIM_CHAT_CONTAINER);
         if (claimButtonContainers.length) {
-            claimButtonContainers[0].getElementsByTagName('button')[0].click();
-            await sleep(1500);
-            let chatTray = document.getElementsByClassName(CHAT_TRAY_CLASSES);
-            chatTray[0].getElementsByTagName('button')[0].click();
+            try {
+                claimButtonContainers[0].getElementsByTagName('button')[0].click();
+                await sleep(1500);
+                let chatTray = document.getElementsByClassName(CHAT_TRAY_CLASSES);
+                chatTray[0].getElementsByTagName('button')[0].click();
+            } catch (e) {
+                console.log('Error in drop collection: ' + e.message)
+            }
         }
     }
 }
