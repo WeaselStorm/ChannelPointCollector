@@ -10,6 +10,10 @@ const CLAIM_CHAT_CONTAINER_QUERY = 'div[data-test-selector="chat-private-callout
 
 const CLAIM_BUTTON_TEXT = "Claim";
 
+const CHAT_RULES_QUERY = 'div.chat-rules-content'
+
+const CHAT_RULES_ACKNOWLEDGEMENT_QUERY = 'button[data-test-selector="chat-rules-ok-button"]'
+
 const CHAT_TRAY_QUERY = 'div[data-test-selector="chat-input-tray"]';
 
 const CLOSE_BUTTON_QUERY = 'button[aria-label="Close"]'
@@ -33,6 +37,13 @@ async function whatever() {
                         claimButton.click()
                     }
                 }
+            }
+        } catch (e) { }
+
+        try {
+            let chatRules = document.querySelectorAll(CHAT_RULES_QUERY);
+            if (chatRules.length && chatRules[0].innerText.includes('CHAT RULES') && chatRules[0].querySelectorAll(CHAT_RULES_ACKNOWLEDGEMENT_QUERY).length) {
+                chatRules[0].querySelector(CHAT_RULES_ACKNOWLEDGEMENT_QUERY).click();
             }
         } catch (e) { }
 
