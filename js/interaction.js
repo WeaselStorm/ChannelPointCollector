@@ -14,7 +14,7 @@ const CHAT_RULES_QUERY = 'div.chat-rules-content'
 
 const CHAT_RULES_ACKNOWLEDGEMENT_QUERY = 'button[data-test-selector="chat-rules-ok-button"]'
 
-const CHAT_TRAY_QUERY = 'div[data-test-selector="chat-input-tray"]';
+const CHAT_TRAY_QUERY = 'div.chat-input-tray__open';
 
 const CLOSE_BUTTON_QUERY = 'button[aria-label="Close"]'
 
