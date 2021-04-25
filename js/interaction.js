@@ -25,6 +25,7 @@ async function whatever() {
             let channelPointArea = document.getElementsByClassName(CHANNEL_POINT_SUMMARY_CLASS);
             if (channelPointArea.length && channelPointArea[0].querySelectorAll(CHANNEL_POINT_ICON_QUERY)) {
                 channelPointArea[0].querySelector(CHANNEL_POINT_ICON_QUERY).click();
+                continue
             }
         } catch (e) { }
 
@@ -35,6 +36,7 @@ async function whatever() {
                 for (let claimButton of claimButtons) {
                     if (claimButton.innerText.trim() === CLAIM_BUTTON_TEXT) {
                         claimButton.click()
+                        continue
                     }
                 }
             }
@@ -44,6 +46,7 @@ async function whatever() {
             let chatRules = document.querySelectorAll(CHAT_RULES_QUERY);
             if (chatRules.length && chatRules[0].innerText.includes('CHAT RULES') && chatRules[0].querySelectorAll(CHAT_RULES_ACKNOWLEDGEMENT_QUERY).length) {
                 chatRules[0].querySelector(CHAT_RULES_ACKNOWLEDGEMENT_QUERY).click();
+                continue
             }
         } catch (e) { }
 
@@ -51,6 +54,7 @@ async function whatever() {
             let chatTray = document.querySelectorAll(CHAT_TRAY_QUERY);
             if (chatTray.length && chatTray[0].innerText.includes('Claimed!') && chatTray[0].querySelectorAll(CLOSE_BUTTON_QUERY).length) {
                 chatTray[0].querySelector(CLOSE_BUTTON_QUERY).click();
+                continue
             }
         } catch (e) { }
     }
