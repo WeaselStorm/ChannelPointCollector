@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Channel Point and Drop Collector",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Collects bonus channel points and claims Drops while watching a stream on Twitch.",
     "icons":{"128": "icon128.png"},
     "content_scripts": [
