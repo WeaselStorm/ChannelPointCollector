@@ -24,7 +24,7 @@ function claimRewards() {
         if (chatRulesButton) {
             chatRulesButton.click();
         }
-        const chatTrayDismiss = document.querySelector([CHAT_TRAY_QUERY, 'button'].join(' '));
+        const chatTrayDismiss = document.querySelector([CHAT_TRAY_QUERY, 'button:not(tw-interactable)'].join(' '));
         if (chatTrayDismiss) {
             chatTrayDismiss.click();
         }
