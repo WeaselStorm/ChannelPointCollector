@@ -24,8 +24,9 @@ function claimRewards() {
         if (chatRulesButton) {
             chatRulesButton.click();
         }
-        const chatTrayDismiss = document.querySelector([CHAT_TRAY_QUERY, 'button'].join(' '));
-        if (chatTrayDismiss) {
+        const chatTrayDismiss = document.querySelector([CHAT_TRAY_QUERY, 'button:not(tw-interactable)'].join(' '));
+        const dropAccountLink = document.querySelector([CHAT_TRAY_QUERY, 'a.tw-link'].join(' '));
+        if (dropAccountLink && chatTrayDismiss) {
             chatTrayDismiss.click();
         }
     }
