@@ -35,6 +35,4 @@ function claimRewards() {
     }
 }
 
-if (document.querySelector(CHAT_ROOM_QUERY)){
-    new MutationObserver(claimRewards).observe(document.querySelector(CHAT_ROOM_QUERY), { attributes: true, childList: true, subtree: true })
-}
+new MutationObserver(claimRewards).observe(document, { attributes: true, childList: true, subtree: true })
