@@ -6,7 +6,7 @@ const CHANNEL_POINT_ICON_QUERY = 'div.claimable-bonus__icon';
 
 const BONUS_BUTTON_QUERY =' div.tw-transition button'
 
-const CLAIM_CHAT_CONTAINER_QUERY = 'div[data-test-selector="chat-private-callout-queue__callout-container"]';
+const CHAT_CALLOUT_QUERY = 'div[data-test-selector="chat-private-callout-queue__callout-container"]';
 
 const CHAT_RULES_ACKNOWLEDGEMENT_QUERY = 'button[data-test-selector="chat-rules-ok-button"]';
 
@@ -19,9 +19,9 @@ function claimRewards() {
         if (bonusButtonIcon && bonusButton) {
             bonusButton.click();
         }
-        const rewardClaimButton = document.querySelector([CLAIM_CHAT_CONTAINER_QUERY, 'button'].join(' '));
-        if (rewardClaimButton) {
-            rewardClaimButton.click();
+        const callout = document.querySelector(CHAT_CALLOUT_QUERY);
+        if (callout && callout.querySelector('a.tw-link') && callout.querySelector('a.tw-link').getAttribute('href').includes('inventory')) {
+            [...callout.querySelectorAll('button')].find(btn => btn.className.includes('ScCoreButtonPrimary')).click()
         }
         const chatRulesButton = document.querySelector(CHAT_RULES_ACKNOWLEDGEMENT_QUERY);
         if (chatRulesButton) {
@@ -35,4 +35,4 @@ function claimRewards() {
     }
 }
 
-new MutationObserver(claimRewards).observe(document, { attributes: true, childList: true, subtree: true })
+new MutationObserver(claimRewards).observe(document, { attributes: true, childList: true, subtree: true });
